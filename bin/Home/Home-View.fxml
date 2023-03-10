@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="681.0" style="-fx-background-color: #2f2b43;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.student_project_repository.HomeController">
+   <AnchorPane fx:id="sideBarSmaller" prefHeight="654.0" prefWidth="59.0" style="-fx-background-color: linear-gradient(from 25px 25px to 150px 500px , #2338a6,   #FA2C56);" stylesheets="@style.css" AnchorPane.leftAnchor="0.0">
+      <children>
+         <ImageView fx:id="navbtn" fitHeight="57.0" fitWidth="69.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" styleClass="navbtn">
+            <image>
+               <Image url="@studentRepoAssets/nav%202.jpg" />
+            </image>
+         </ImageView>
+         <Button id="#homebtn" fx:id="home1" layoutY="77.0" mnemonicParsing="false" onAction="#homeMenuPressed" prefHeight="50.0" prefWidth="65.0" textFill="#e8e3e3" AnchorPane.leftAnchor="0.0">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="30" styleClass="fontIcons" text="" />
+            </graphic>
+         </Button>
+         <Button fx:id="addProject" layoutX="-1.0" layoutY="151.0" mnemonicParsing="false" onAction="#addProjectPressed" prefHeight="50.0" prefWidth="65.0" textFill="#e8e3e3" AnchorPane.leftAnchor="0.0">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <ImageView fitHeight="41.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="fontIcons">
+                  <image>
+                     <Image url="@studentRepoAssets/project%202.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button fx:id="balance" layoutX="-1.0" layoutY="220.0" mnemonicParsing="false" onAction="#balanceBtnPressed" prefHeight="50.0" prefWidth="65.0" textFill="#e8e3e3" AnchorPane.leftAnchor="0.0">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <FontAwesomeIcon fx:id="ba" fill="WHITE" glyphName="MONEY" size="30" styleClass="fontIcons" text="" />
+            </graphic>
+         </Button>
+         <Button fx:id="notification" layoutY="284.0" mnemonicParsing="false" onAction="#notificationBtnPressed" prefHeight="50.0" prefWidth="65.0" textFill="#fff8f8" AnchorPane.leftAnchor="0.0">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <FontAwesomeIcon fill="WHITE" glyphName="BELL" size="30" styleClass="fontIcons" text="" />
+            </graphic>
+         </Button>
+         <Button fx:id="profile" layoutX="-1.0" layoutY="347.0" mnemonicParsing="false" onAction="#profileBtnPressed" prefHeight="50.0" prefWidth="65.0" textFill="#fcfcfc" AnchorPane.leftAnchor="0.0">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <FontAwesomeIcon fill="#fbfbfb" glyphName="USER" size="30" styleClass="fontIcons" text="" />
+            </graphic>
+         </Button>
+         <Button fx:id="others" layoutX="-1.0" layoutY="402.0" minWidth="53.0" mnemonicParsing="false" onAction="#aboutBtnPressed" prefHeight="50.0" prefWidth="65.0" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <graphic>
+               <FontAwesomeIcon fill="WHITE" glyphName="INFO" size="30" styleClass="fontIcons" wrappingWidth="23.571428298950195" />
+            </graphic>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="sideBar" prefHeight="663.0" prefWidth="91.0" style="-fx-background-color: linear-gradient(from 25px 25px to 150px 500px , #2338a6,   #FA2C56);" stylesheets="@style.css" visible="false">
+      <children>
+         <Button fx:id="EditPBn" contentDisplay="TOP" layoutX="1.0" layoutY="370.0" mnemonicParsing="false" onAction="#profileBtnPressed" prefHeight="73.0" prefWidth="91.0" text="Profile" textFill="#fcfcfc" AnchorPane.leftAnchor="0.0">
+            <font>
+               <Font name="Bell MT" size="12.0" />
+            </font>
+            <graphic>
+               <FontAwesomeIcon fill="#fbfbfb" glyphName="USER" size="30" styleClass="fontIcons" text="" />
+            </graphic>
+         </Button>
+         <Button fx:id="others11" contentDisplay="TOP" layoutX="2.0" layoutY="440.0" mnemonicParsing="false" onAction="#aboutBtnPressed" prefHeight="76.0" prefWidth="91.0" text="About" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+            <graphic>
+               <FontAwesomeIcon fill="WHITE" glyphName="INFO" size="30" styleClass="fontIcons" wrappingWidth="23.571428298950195" />
+            </graphic>
+         </Button>
+         <Button fx:id="addBigerNav" contentDisplay="TOP" layoutX="-3.0" layoutY="152.0" mnemonicParsing="false" onAction="#addProjectPressed" prefHeight="75.0" prefWidth="91.0" text="Project" textFill="#e8e3e3" AnchorPane.leftAnchor="0.0">
+            <graphic>
+               <ImageView fitHeight="41.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="fontIcons">
+                  <image>
+                     <Image url="@studentRepoAssets/project%202.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button fx:id="balanceBigerNav" contentDisplay="TOP" layoutX="-1.0" layoutY="231.0" mnemonicParsing="false" onAction="#balanceBtnPressed" prefHeight="73.0" prefWidth="91.0" text="Balance" textFill="#e8e3e3" AnchorPane.leftAnchor="0.0">
+            <graphic>
+               <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="30" styleClass="fontIcons" text="" />
+            </graphic>
+         </Button>
+         <Button fx:id="notificationBn" alignment="TOP_CENTER" contentDisplay="TOP" layoutY="303.0" mnemonicParsing="false" onAction="#notificationBtnPressed" prefHeight="64.0" prefWidth="91.0" text="Notification" textFill="#fff8f8" AnchorPane.leftAnchor="0.0">
+            <font>
+               <Font name="Bell MT" size="12.0" />
+            </font>
+            <graphic>
+               <FontAwesomeIcon fill="WHITE" glyphName="BELL" size="30" styleClass="fontIcons" text="" />
+            </graphic>
+         </Button>
+         <Button id="#homebtn" fx:id="homeSmall1" contentDisplay="TOP" layoutY="75.0" mnemonicParsing="false" onAction="#homeMenuPressed" prefHeight="73.0" prefWidth="91.0" text="Home" textFill="#e8e3e3" AnchorPane.leftAnchor="0.0">
+            <graphic>
+               <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="30" styleClass="fontIcons" text="" />
+            </graphic>
+            <font>
+               <Font name="Bell MT" size="12.0" />
+            </font>
+         </Button>
+         <Button fx:id="navbtncls" layoutX="21.0" layoutY="21.0" minWidth="37.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="37.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="59.0">
+            <graphic>
+               <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="30" styleClass="fontIcons" />
+            </graphic>
+         </Button>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="homeAnc" layoutX="92.0" prefHeight="654.0" prefWidth="589.0" style="-fx-background-color: #2f2b43;" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="92.0" AnchorPane.rightAnchor="0.0">
+      <children>
+         <Pane layoutX="418.6666666666667" layoutY="407.0" prefHeight="138.0" prefWidth="357.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" AnchorPane.rightAnchor="-153.0">
+            <rotationAxis>
+               <Point3D z="4.0" />
+            </rotationAxis>
+         </Pane>
+         <Pane layoutX="-12.0" layoutY="-93.0" prefHeight="204.0" prefWidth="310.0" rotate="49.4" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+         <Pane layoutX="462.0" layoutY="107.0" prefHeight="209.0" prefWidth="328.0" rotate="129.8" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" AnchorPane.rightAnchor="-172.0" />
+         <Label layoutX="217.0" layoutY="14.0" prefHeight="50.0" prefWidth="235.0" text="Projects" textFill="#fdfdfd">
+            <font>
+               <Font name="Cooper Black" size="43.0" />
+            </font>
+         </Label>
+         <Pane fx:id="projeDescPane" layoutY="100.0" opacity="0.82" prefHeight="123.0" prefWidth="568.0" style="-fx-background-radius: 10; -fx-background-color: #2f2b43;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="7.0">
+            <children>
+               <ImageView fx:id="projectImageView" fitHeight="105.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@studentRepoAssets/proj2.jpg" />
+                  </image>
+               </ImageView>
+               <Label fx:id="projectTitleLabel" layoutX="246.0" layoutY="-1.0" text="Title" textFill="#fdfdfd" wrapText="true">
+                  <font>
+                     <Font name="Bell MT Bold" size="20.0" />
+                  </font>
+               </Label>
+               <Label fx:id="ownerLabel" layoutX="486.0" layoutY="-1.0" text="user" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Bell MT Bold" size="20.0" />
+                  </font>
+                  <padding>
+                     <Insets right="10.0" />
+                  </padding>
+               </Label>
+               <Label fx:id="projeDescLabel" layoutX="218.0" layoutY="31.0" prefHeight="88.0" prefWidth="285.0" text="No data" textFill="WHITE" wrapText="true" />
+            </children>
+         </Pane>
+         <Pane layoutX="29.0" layoutY="413.0" opacity="0.84" prefHeight="123.0" prefWidth="588.0" style="-fx-background-radius: 10; -fx-background-color: #2f2b43;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="7.0">
+            <children>
+               <ImageView fx:id="projectImageView2" fitHeight="117.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@studentRepoAssets/proj2.jpg" />
+                  </image>
+               </ImageView>
+               <Label fx:id="projectTitleLabel2" layoutX="248.0" layoutY="-1.0" text="Title" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Bell MT Bold" size="20.0" />
+                  </font>
+               </Label>
+               <Label fx:id="ownerLabel2" layoutX="488.0" layoutY="-1.0" text="user" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Bell MT Bold" size="20.0" />
+                  </font>
+                  <padding>
+                     <Insets right="10.0" />
+                  </padding>
+               </Label>
+               <Label fx:id="projeDescLabel2" layoutX="212.0" layoutY="29.0" prefHeight="88.0" prefWidth="285.0" style="-fx-background-color: #;" text="No data" textFill="WHITE" wrapText="true" />
+            </children>
+         </Pane>
+         <Pane layoutX="25.0" layoutY="262.0" opacity="0.75" prefHeight="123.0" prefWidth="625.0" style="-fx-background-radius: 10; -fx-background-color: #2f2b43;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="7.0">
+            <children>
+               <ImageView fx:id="projectImageView1" fitHeight="123.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@studentRepoAssets/proj4.jpg" />
+                  </image>
+               </ImageView>
+               <Label fx:id="projectTitleLabel1" layoutX="239.0" layoutY="-1.0" text="Title" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Bell MT Bold" size="20.0" />
+                  </font>
+               </Label>
+               <Label fx:id="ownerLabel1" layoutX="485.0" layoutY="-1.0" text="user" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Bell MT Bold" size="20.0" />
+                  </font>
+               </Label>
+               <Label fx:id="projeDescLabel1" layoutX="217.0" layoutY="27.0" prefHeight="88.0" prefWidth="285.0" text="No data" textFill="WHITE" wrapText="true" />
+            </children>
+            <padding>
+               <Insets left="30.0" />
+            </padding>
+         </Pane>
+      </children>
+      <padding>
+         <Insets left="30.0" />
+      </padding>
+   </AnchorPane>
+   <AnchorPane fx:id="profileAnc" layoutX="102.0" layoutY="10.0" prefHeight="645.0" prefWidth="589.0" style="-fx-background-color: #2f2b43;" stylesheets="@style.css" visible="false" AnchorPane.leftAnchor="92.0" AnchorPane.rightAnchor="0.0">
+      <children>
+         <Pane layoutX="418.6666666666667" layoutY="407.0" prefHeight="138.0" prefWidth="357.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" AnchorPane.rightAnchor="-153.0">
+            <rotationAxis>
+               <Point3D z="4.0" />
+            </rotationAxis>
+         </Pane>
+         <Pane layoutX="-12.0" layoutY="-93.0" prefHeight="204.0" prefWidth="310.0" rotate="49.4" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+         <Pane layoutX="462.0" layoutY="107.0" prefHeight="209.0" prefWidth="328.0" rotate="129.8" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" AnchorPane.rightAnchor="-172.0" />
+         <Label layoutX="258.0" layoutY="14.0" prefHeight="50.0" prefWidth="235.0" text="Profile" textFill="#fdfdfd" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="95.66666666666666">
+            <font>
+               <Font name="Cooper Black" size="43.0" />
+            </font>
+         </Label>
+         <Pane layoutX="120.0" layoutY="100.0" opacity="0.89" prefHeight="386.0" prefWidth="418.0" style="-fx-background-radius: 10; -fx-background-color: #2f2b43;" AnchorPane.bottomAnchor="159.0" AnchorPane.topAnchor="100.0">
+            <children>
+               <Label fx:id="fullNameLable" layoutX="114.0" layoutY="44.0" prefHeight="39.0" prefWidth="235.0" text="Name:" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="18.0" layoutY="110.0" size="100" wrappingWidth="79.53192138671875" />
+               <Label fx:id="idLabel" layoutX="121.0" layoutY="71.0" prefHeight="50.0" prefWidth="155.0" text="ID No:" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <PasswordField fx:id="newPassField" layoutX="78.0" layoutY="255.0" prefHeight="25.0" prefWidth="243.0" promptText="****" styleClass="updatePassaFiled" />
+               <Label fx:id="projectNum" layoutX="115.0" layoutY="110.0" prefHeight="50.0" prefWidth="155.0" text="No. Projects:" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <PasswordField fx:id="confirmPassField" layoutX="78.0" layoutY="297.0" prefHeight="25.0" prefWidth="243.0" promptText="****" styleClass="updatePassaFiled" />
+               <Label layoutX="88.0" layoutY="239.0" prefHeight="5.0" prefWidth="144.0" text="New password" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="12.0" />
+                  </font>
+               </Label>
+               <Label layoutX="88.0" layoutY="282.0" prefHeight="10.0" prefWidth="144.0" text="Confirm password" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="12.0" />
+                  </font>
+               </Label>
+               <Button fx:id="updatePassBtn" layoutX="119.0" layoutY="338.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="155.0" styleClass="updatePassaFiledbtn" text="Update" textFill="WHITE">
+                  <font>
+                     <Font name="Dubai Regular" size="16.0" />
+                  </font>
+               </Button>
+               <PasswordField fx:id="oldPassField" layoutX="75.0" layoutY="212.0" prefHeight="25.0" prefWidth="243.0" promptText="****" styleClass="updatePassaFiled" />
+               <Label layoutX="85.0" layoutY="196.0" prefHeight="5.0" prefWidth="144.0" text="Old password" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="12.0" />
+                  </font>
+               </Label>
+            </children>
+         </Pane>
+         <Pane fx:id="errorMsg" layoutX="136.0" layoutY="554.0" prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: white; -fx-background-radius: 10;" visible="false">
+            <children>
+               <Label fx:id="errMsgLabel" layoutX="47.0" layoutY="6.0" prefHeight="35.0" prefWidth="285.0" text="Error msage" textFill="RED">
+                  <font>
+                     <Font name="Arial Rounded MT Bold" size="17.0" />
+                  </font>
+               </Label>
+            </children>
+         </Pane>
+      </children>
+      <padding>
+         <Insets left="30.0" />
+      </padding>
+   </AnchorPane>
+   <AnchorPane fx:id="BalanceAnc" layoutX="92.0" layoutY="20.0" prefHeight="645.0" prefWidth="609.0" style="-fx-background-color: #2f2b43;" stylesheets="@style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="92.0" AnchorPane.rightAnchor="-20.0">
+      <children>
+         <Pane layoutX="418.6666666666667" layoutY="407.0" prefHeight="138.0" prefWidth="357.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" AnchorPane.rightAnchor="-153.0">
+            <rotationAxis>
+               <Point3D z="4.0" />
+            </rotationAxis>
+         </Pane>
+         <Pane layoutX="-12.0" layoutY="-93.0" prefHeight="204.0" prefWidth="310.0" rotate="49.4" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+         <Pane layoutX="462.0" layoutY="107.0" prefHeight="209.0" prefWidth="328.0" rotate="129.8" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" AnchorPane.rightAnchor="-172.0" />
+         <Label layoutX="258.0" layoutY="14.0" prefHeight="50.0" prefWidth="235.0" text="Balance" textFill="#fdfdfd" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="95.66666666666666">
+            <font>
+               <Font name="Cooper Black" size="43.0" />
+            </font>
+         </Label>
+         <Pane layoutX="120.0" layoutY="100.0" opacity="0.89" prefHeight="304.0" prefWidth="404.0" style="-fx-background-radius: 10; -fx-background-color: #2f2b43;" AnchorPane.bottomAnchor="241.0" AnchorPane.topAnchor="100.0">
+            <children>
+               <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="18.0" layoutY="117.0" size="100" wrappingWidth="79.53192138671875" />
+               <Button fx:id="withdrawBtn" layoutX="121.0" layoutY="235.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="155.0" styleClass="updatePassaFiledbtn" text="Withdraw" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Franklin Gothic Demi" size="17.0" />
+                  </font>
+               </Button>
+               <Label fx:id="balanceAmount" layoutX="146.0" layoutY="43.0" prefHeight="50.0" prefWidth="243.0" text="Total amount:" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <Label layoutX="88.0" layoutY="175.0" prefHeight="18.0" prefWidth="155.0" text="Total amount:" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="11.0" />
+                  </font>
+               </Label>
+               <Label layoutX="146.0" layoutY="81.0" prefHeight="50.0" prefWidth="155.0" text="Sold Projects:" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="withdrawableBalance" layoutX="88.0" layoutY="193.0" prefHeight="25.0" prefWidth="235.0" promptText="400" styleClass="withdrawalField" />
+               <Label layoutX="286.0" layoutY="196.0" prefHeight="20.0" prefWidth="37.0" text="Birr">
+                  <font>
+                     <Font name="Free Serif" size="15.0" />
+                  </font>
+               </Label>
+            </children>
+         </Pane>
+         <Pane fx:id="withdrawFailer" layoutX="201.0" layoutY="409.0" prefHeight="73.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;" visible="false">
+            <children>
+               <Label fx:id="failermsgwithdraw" layoutX="17.0" layoutY="12.0" prefHeight="50.0" prefWidth="178.0" text="Message" textFill="#f20000" />
+               <FontAwesomeIcon fx:id="correctCheckIcon1" fill="RED" glyphName="CLOSE" layoutX="155.0" layoutY="43.0" size="20" />
+            </children>
+         </Pane>
+         <Pane fx:id="withdrawSuccess" layoutX="205.0" layoutY="404.0" prefHeight="73.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;" visible="false">
+            <children>
+               <Label fx:id="withdrawMessageLabel" layoutX="9.0" layoutY="12.0" prefHeight="50.0" prefWidth="186.0" text="message" textFill="#00ff09">
+                  <font>
+                     <Font name="Bell MT" size="16.0" />
+                  </font>
+               </Label>
+               <FontAwesomeIcon fx:id="correctCheckIcon" fill="#10d413" glyphName="CHECK" layoutX="155.0" layoutY="43.0" size="20" />
+            </children>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </Pane>
+      </children>
+      <padding>
+         <Insets left="30.0" />
+      </padding>
+   </AnchorPane>
+   <AnchorPane fx:id="aboutAnc" layoutX="92.0" layoutY="30.0" prefHeight="623.0" prefWidth="619.0" style="-fx-background-color: #2f2b43;" stylesheets="@style.css" visible="false">
+      <children>
+         <Pane layoutX="418.6666666666667" layoutY="407.0" prefHeight="138.0" prefWidth="357.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" AnchorPane.rightAnchor="-153.0">
+            <rotationAxis>
+               <Point3D z="4.0" />
+            </rotationAxis>
+         </Pane>
+         <Pane layoutX="-12.0" layoutY="-93.0" prefHeight="204.0" prefWidth="310.0" rotate="49.4" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+         <Pane layoutX="462.0" layoutY="107.0" prefHeight="209.0" prefWidth="328.0" rotate="129.8" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" AnchorPane.rightAnchor="-172.0" />
+         <Label layoutX="263.0" layoutY="14.0" prefHeight="50.0" prefWidth="205.0" text="ABOUT" textFill="#fdfdfd" AnchorPane.leftAnchor="233.0" AnchorPane.rightAnchor="151.0">
+            <font>
+               <Font name="Cooper Black" size="43.0" />
+            </font>
+         </Label>
+         <Pane layoutX="56.0" layoutY="100.0" opacity="0.89" prefHeight="304.0" prefWidth="531.0" style="-fx-background-radius: 10; -fx-background-color: #2f2b43;" AnchorPane.bottomAnchor="219.0" AnchorPane.topAnchor="100.0">
+            <children>
+               <FontAwesomeIcon fill="WHITE" glyphName="CODE" layoutX="6.0" layoutY="42.0" size="100" wrappingWidth="79.53192138671875" />
+               <Label layoutX="218.0" layoutY="-1.0" prefHeight="50.0" prefWidth="194.0" text="Developed By:" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Code2000" size="25.0" />
+                  </font>
+               </Label>
+               <Label layoutX="126.0" layoutY="87.0" prefHeight="50.0" prefWidth="155.0" text="Abdureuf Shifa " textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <Label layoutX="125.0" layoutY="44.0" prefHeight="50.0" prefWidth="155.0" text="Fanuel Almaw" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <Label layoutX="127.0" layoutY="128.0" prefHeight="50.0" prefWidth="155.0" text="Kidist Mamaye" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <Label layoutX="127.0" layoutY="171.0" prefHeight="50.0" prefWidth="155.0" text="Aderaw Molla" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <Label layoutX="125.0" layoutY="211.0" prefHeight="50.0" prefWidth="169.0" text="Jerusalem Girma" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <Label layoutX="123.0" layoutY="248.0" prefHeight="50.0" prefWidth="212.0" text="Haileyesus Shibabaw" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="20.0" />
+                  </font>
+               </Label>
+               <Label layoutX="287.0" layoutY="88.0" prefHeight="50.0" prefWidth="194.0" text="shifabduruef@gmail.com" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="16.0" />
+                  </font>
+               </Label>
+               <Label layoutX="284.0" layoutY="45.0" prefHeight="50.0" prefWidth="235.0" text="fanuelalmawstop@gmail.com" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="16.0" />
+                  </font>
+               </Label>
+               <Label layoutX="284.0" layoutY="128.0" prefHeight="50.0" prefWidth="243.0" text="kidistmamaye0202@gmail.com" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="16.0" />
+                  </font>
+               </Label>
+               <Label layoutX="280.0" layoutY="178.0" prefHeight="39.0" prefWidth="243.0" text="mollaaderaw@gmail.com" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="16.0" />
+                  </font>
+               </Label>
+               <Label layoutX="302.0" layoutY="216.0" prefHeight="39.0" prefWidth="243.0" text="jerihagbj@gmail.com" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="16.0" />
+                  </font>
+               </Label>
+               <Label layoutX="335.0" layoutY="253.0" prefHeight="35.0" prefWidth="200.0" text="hailatman477@gmail.com" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Century Gothic" size="16.0" />
+                  </font>
+               </Label>
+               <FontAwesomeIcon fill="#fbfbfb" glyphName="DESKTOP" layoutX="86.0" layoutY="79.0" size="30" />
+               <FontAwesomeIcon fill="#fbfbfb" glyphName="DESKTOP" layoutX="86.0" layoutY="208.0" size="30" />
+               <FontAwesomeIcon fill="#fbfbfb" glyphName="DESKTOP" layoutX="86.0" layoutY="162.0" size="30" />
+               <FontAwesomeIcon fill="#fbfbfb" glyphName="DESKTOP" layoutX="86.0" layoutY="123.0" size="30" />
+               <FontAwesomeIcon fill="#fbfbfb" glyphName="DESKTOP" layoutX="86.0" layoutY="246.0" size="30" />
+               <FontAwesomeIcon fill="#fbfbfb" glyphName="DESKTOP" layoutX="86.0" layoutY="283.0" size="30" />
+            </children>
+         </Pane>
+      </children>
+      <padding>
+         <Insets left="30.0" />
+      </padding>
+   </AnchorPane>
+   <AnchorPane fx:id="addProjectAnc" layoutX="102.0" layoutY="40.0" prefHeight="623.0" prefWidth="619.0" style="-fx-background-color: #2f2b43;" stylesheets="@style.css" visible="false">
+      <children>
+         <Pane layoutX="418.6666666666667" layoutY="407.0" prefHeight="138.0" prefWidth="357.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" AnchorPane.rightAnchor="-153.0">
+            <rotationAxis>
+               <Point3D z="4.0" />
+            </rotationAxis>
+         </Pane>
+         <Pane layoutX="-12.0" layoutY="-93.0" prefHeight="204.0" prefWidth="310.0" rotate="49.4" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+         <Pane layoutX="462.0" layoutY="107.0" prefHeight="209.0" prefWidth="328.0" rotate="129.8" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" AnchorPane.rightAnchor="-172.0" />
+         <Label layoutX="190.0" layoutY="25.0" prefHeight="50.0" prefWidth="386.0" text="ADD PROJECT" textFill="#fdfdfd" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="73.0">
+            <font>
+               <Font name="Cooper Black" size="43.0" />
+            </font>
+         </Label>
+         <Pane layoutX="56.0" layoutY="100.0" opacity="0.89" prefHeight="418.0" prefWidth="542.0" style="-fx-background-radius: 10; -fx-background-color: #2f2b43;" AnchorPane.bottomAnchor="105.0" AnchorPane.topAnchor="100.0">
+            <children>
+               <FontAwesomeIcon fill="WHITE" glyphName="GEARS" layoutX="7.0" layoutY="99.0" size="100" wrappingWidth="79.53192138671875" />
+               <Label layoutX="147.0" layoutY="16.0" prefHeight="39.0" prefWidth="80.0" text="Tittle" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Bell MT" size="13.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="projTitleField" layoutX="147.0" layoutY="45.0" prefHeight="25.0" prefWidth="212.0" promptText="Title project" styleClass="withdrawalField">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </TextField>
+               <Label layoutX="148.0" layoutY="65.0" prefHeight="39.0" prefWidth="80.0" text="Catagory" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Bell MT" size="13.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="projCatagoryField" layoutX="148.0" layoutY="94.0" prefHeight="25.0" prefWidth="212.0" promptText="computing, Agri, Electrical" styleClass="withdrawalField">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </TextField>
+               <Label layoutX="147.0" layoutY="111.0" prefHeight="39.0" prefWidth="80.0" text="Price" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Bell MT" size="13.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="projectPrice" layoutX="147.0" layoutY="140.0" prefHeight="25.0" prefWidth="212.0" promptText="100,000" styleClass="withdrawalField">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </TextField>
+               <Label layoutX="312.0" layoutY="133.0" prefHeight="39.0" prefWidth="80.0" text="Birr" textFill="#7b7b7b">
+                  <font>
+                     <Font name="Bell MT" size="13.0" />
+                  </font>
+               </Label>
+               <TextArea fx:id="projectDesc" layoutX="143.0" layoutY="186.0" prefHeight="64.0" prefWidth="219.0" promptText="Short Description..." styleClass="withdrawalField" />
+               <Label layoutX="148.0" layoutY="157.0" prefHeight="39.0" prefWidth="80.0" text="Description" textFill="#fdfdfd">
+                  <font>
+                     <Font name="Bell MT" size="13.0" />
+                  </font>
+               </Label>
+               <Button fx:id="imgUpload" layoutX="143.0" layoutY="275.0" mnemonicParsing="false" onAction="#uploadBtnPressed" prefHeight="50.0" prefWidth="219.0" style="-fx-background-color: #FA2C56;" text="ADD" textFill="WHITE">
+                  <graphic>
+                     <FontAwesomeIcon fill="#f8f8f8" glyphName="CAMERA" size="30" />
+                  </graphic>
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Button>
+               <Button fx:id="addProjectBtn" layoutX="147.0" layoutY="346.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="212.0" style="-fx-border-color: #FA2C56; -fx-radius: 10;" text="Add Project" textFill="WHITE" />
+               <ImageView fx:id="trialImage" fitHeight="117.0" fitWidth="133.0" layoutX="385.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: pointer;" />
+               <Label layoutX="409.0" layoutY="79.0" text="Preview" textFill="#cecece" wrapText="true">
+                  <font>
+                     <Font name="Arial Narrow" size="20.0" />
+                  </font>
+               </Label>
+            </children>
+         </Pane>
+         <Pane fx:id="projAddSucces" layoutX="158.0" layoutY="525.0" prefHeight="50.0" prefWidth="285.0" style="-fx-background-color: white; -fx-background-radius: 10;" visible="false">
+            <children>
+               <Label layoutX="28.0" layoutY="15.0" text="Your project Successfuly Add!" textFill="#00ff22">
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <FontAwesomeIcon fill="#00ff37" glyphName="CHECK" layoutX="259.0" layoutY="32.0" />
+            </children>
+         </Pane>
+      </children>
+      <padding>
+         <Insets left="30.0" />
+      </padding>
+   </AnchorPane>
+   <Rectangle fx:id="notificationRect" arcHeight="5.0" arcWidth="5.0" fill="#d7d7d7" height="20.0" layoutX="75.0" layoutY="301.0" rotate="45.0" stroke="#fbfbfb" strokeType="INSIDE" visible="false" width="20.0" AnchorPane.leftAnchor="75.0" />
+   <Pane fx:id="notifyPane" layoutX="85.0" layoutY="251.0" prefHeight="123.0" prefWidth="243.0" style="-fx-background-color: #f0f0f0; -fx-background-radius: 5;" visible="false" AnchorPane.leftAnchor="85.0">
+      <children>
+         <Pane prefHeight="39.0" prefWidth="243.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+            <children>
+               <Label layoutX="14.0" layoutY="11.0" text="Selling Request" textFill="WHITE" />
+            </children>
+         </Pane>
+         <Pane layoutY="42.0" prefHeight="39.0" prefWidth="243.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+            <children>
+               <Label layoutX="16.0" layoutY="10.0" text="Your project accepted" textFill="WHITE" />
+            </children>
+         </Pane>
+         <Pane layoutX="1.0" layoutY="84.0" prefHeight="39.0" prefWidth="243.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+            <children>
+               <Label layoutX="19.0" layoutY="13.0" text="Balance add to your account" textFill="WHITE" />
+            </children>
+         </Pane>
+      </children>
+   </Pane>
+   <Label fx:id="userNameLabel" layoutX="564.0" layoutY="-7.0" prefHeight="57.0" prefWidth="178.0" text="Username" textFill="WHITE" AnchorPane.rightAnchor="-61.0">
+      <font>
+         <Font name="Gill Sans MT" size="21.0" />
+      </font>
+      <graphic>
+         <FontAwesomeIcon fill="WHITE" glyphName="USER" size="35" />
+      </graphic>
+   </Label>
+</AnchorPane>

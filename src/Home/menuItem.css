@@ -1,0 +1,13 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.menu-item{
+	-fx-padding: 0 0 0 0;
+	-fx-background-color: red;
+	
+}
+.menu-item.label{
+	-fx-font-size:20.0 pt;
+}
+.menu-item.label:hover{
+	
+	
+}
